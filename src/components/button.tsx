@@ -12,7 +12,7 @@ const Button = (props: ButtonProps) => {
 
   const defaultStyles =
     'rounded-[18px] flex capitalize items-center justify-center gap-[9px] w-fit text-white text-base lg:text-lg font-semibold leading-snug tracking-tight px-10 py-5 md:px-[54px] md:py-[26px]'
-  const bgClass = variant === 'primary' ? 'bg-gray-900' : 'bg-gray-900'
+  const bgClass = variant === 'primary' ? 'bg-primary-200' : 'bg-primary-100'
   const className = `${defaultStyles} ${bgClass}`
 
   return (

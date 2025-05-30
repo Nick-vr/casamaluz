@@ -119,3 +119,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.font-dm {
+  font-family: 'DM Serif Display', serif;
+}
+.font-jost {
+  font-family: 'Jost', sans-serif;
+}

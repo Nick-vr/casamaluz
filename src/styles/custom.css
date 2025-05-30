@@ -1,1 +1,49 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.startCenter {
+  display: flex;
+  align-items: center;
+}
+
+.btwn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bg-primary-100 {
+  background-color: rgb(205 162 116 / 1);
+}
+.bg-primary-200 {
+  background-color: rgb(41 47 54 / 1);
+}
+.bg-primary-300 {
+  background-color: rgb(244 240 236 / 1);
+}
+
+.bg-white {
+  background-color: rgb(255 255 255 / 1);
+}
+.bg-hero {
+  background-image: url(../assets/hero.png);
+  background-position: 50%;
+}
+.bg-cover {
+  background-size: cover;
+}
+.bg-center {
+  background-position: center;
+}
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+.height-400px {
+  height: 400px;
+}
+.services {
+  justify-content: space-between;
+}

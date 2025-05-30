@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import useMediaQuery from '../utils/useMediaQuery.ts'
 import logo from '../assets/logo.svg'
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
 const Navbar = (props: Props) => {
   const [toggled, setToggled] = useState(false)
   const { lang } = props
-  const matches = true
+  const matches = useMediaQuery('(min-width: 1280px)')
 
   const linkStyle = 'text-xl leading-6 font-jost text-primary-200'
 

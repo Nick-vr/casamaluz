@@ -8,16 +8,16 @@ import CallIcon from '../../icons/call.tsx'
 
 const services = [
   {
-    title: 'Project Plan',
-    text: 'There are many variations of the passages of lorem Ipsum from available, majority.',
+    title: 'Facilities',
+    text: 'Amenities and features available for tenants, both within the individual apartment unit and in the building or complex.',
   },
   {
-    title: 'Interior Work',
-    text: 'There are many variations of the passages of lorem Ipsum from available, majority.',
+    title: 'Booking',
+    text: 'Book your time in our appartmnt right now',
   },
   {
-    title: 'Realization',
-    text: 'There are many variations of the passages of lorem Ipsum from available, majority.',
+    title: 'Photos',
+    text: 'Take a look in our extensive gallery of photos from our beautiful apartment.',
   },
 ]
 
@@ -44,25 +44,37 @@ const reviews = [
 ---
 
 <Layout lang="en">
-  <section>
-    <h1>Some text here</h1>
-    <img src={hero.src} class="hero" alt="" />
+  <!-- Banner -->
+
+  <section
+    class="w-full bg-hero bg-no-repeat bg-cover lg:min-h-[100vh] px-12 xl:px-0 flex items-center"
+  >
+    <div class="mx-auto flex flex-col bg-stone-500/30 rounded-[48px] px-6 py-[88px]">
+      <h1
+        class="text-[40px] leading-[50px] md:text-[60px] xl:text-[85px] pb-4 font-dm md:leading-[106.25px] text-white"
+      >
+        Let Your Home Be Unique
+      </h1>
+      <p class="text-base md:text-[22px] pb-5 font-jost text-white">
+        There are many variations of the passages of lorem Ipsum fromavailable,variations of the
+        passages.
+      </p>
+    </div>
   </section>
 
   <!-- Services Section -->
 
   <section
-    class="lg:max-w-[1200px] flex flex-col gap-8 lg:gap-10 lg:flex-row px-12 xl:px-0 w-full mx-auto pt-[100px] lg:pt-[200px] justify-between"
+    class="lg:max-w-[1200px] flex flex-col gap-8 lg:gap-10 lg:flex-row px-12 xl:px-0 w-full mx-auto pt-[100px] lg:pt-[200px]"
   >
     {
       services.map((service) => {
         return (
-          <div class="w-full max-w-[358px] mx-auto flex flex-col justify-center items-center gap-3 md:gap-5">
+          <div class="services  w-full max-w-[358px] mx-auto flex flex-col justify-center items-center gap-3 md:gap-5">
             <h3 class="text-text-blue font-dm text-[22px] md:text-[25px] leading-loose">
               {service.title}
             </h3>
             <p class="text-base md:text-[22px] tracking-tight font-jost text-text-gray leading-[33px] text-center">
-              {' '}
               {service.text}
             </p>
             <a
