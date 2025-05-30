@@ -1,12 +1,12 @@
+import logo from '../assets/logo.svg'
+
 const Footer = () => {
   return (
     <footer className="mt-[135px] w-full">
       <div className="w-full max-w-[1200px] px-12 xl:px-0 mx-auto pb-[135px] grid grid-cols-1 lg:grid-cols-5 md:grid-cols-2 gap-6">
         {/* start */}
         <div className="col-span-1 md:col-span-2">
-          <a href="/" className="">
-            <h1>CASAMALUZ</h1>
-          </a>
+          <img className="w-70" src={logo.src} alt="Logo" />
           <p className="tracking-tight text-base lg:text-[22px] lg:leading-[33px] font-jost text-text-gray pt-[18px] pb-[33px]">
             Some text here about us
           </p>
