@@ -47,3 +47,13 @@
 .services {
   justify-content: space-between;
 }
+
+.about-pool-img {
+  height: 500px;
+  border-top-right-radius: 200px;
+  border-bottom-left-radius: 200px;
+}
+.bg-booking-hero {
+  background-image: url(../assets/booking-hero.jpg);
+  background-position: 50%;
+}

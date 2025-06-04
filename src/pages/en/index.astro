@@ -1,41 +1,45 @@
 ---
 // ENGLISH
 import Layout from '@/layouts/Layout.astro'
-import hero from '../../assets/hero.png'
 import Button from '../../components/button.tsx'
 import ArrowSec from '../../icons/arrow-sec.tsx'
 import CallIcon from '../../icons/call.tsx'
 
-const services = [
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+import type { ui } from '@/i18n/ui.ts'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+import poolImage from '../../assets/pool.jpg'
+
+const sections = [
   {
-    title: 'Facilities',
-    text: 'Amenities and features available for tenants, both within the individual apartment unit and in the building or complex.',
+    title: t('index.section.facilities.title'),
+    text: t('index.section.facilities.text'),
   },
   {
-    title: 'Booking',
-    text: 'Book your time in our appartmnt right now',
+    title: t('index.section.booking.title'),
+    text: t('index.section.booking.text'),
   },
   {
-    title: 'Photos',
-    text: 'Take a look in our extensive gallery of photos from our beautiful apartment.',
+    title: t('index.section.photos.title'),
+    text: t('index.section.photos.text'),
   },
 ]
 
 const reviews = [
   {
-    img: '/natasha.png',
     name: 'Nattasha Mith',
     location: 'Sydney, USA',
     review: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.',
   },
   {
-    img: '/benny.png',
     name: 'Benny Roll',
     location: 'Sydney, New York',
     review: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.',
   },
   {
-    img: '/raymond.png',
     name: 'Raymond Galario',
     location: 'Sydney, Australia',
     review: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.',
@@ -45,7 +49,6 @@ const reviews = [
 
 <Layout lang="en">
   <!-- Banner -->
-
   <section
     class="w-full bg-hero bg-no-repeat bg-cover lg:min-h-[100vh] px-12 xl:px-0 flex items-center"
   >
@@ -63,25 +66,24 @@ const reviews = [
   </section>
 
   <!-- Services Section -->
-
   <section
     class="lg:max-w-[1200px] flex flex-col gap-8 lg:gap-10 lg:flex-row px-12 xl:px-0 w-full mx-auto pt-[100px] lg:pt-[200px]"
   >
     {
-      services.map((service) => {
+      sections.map((section) => {
         return (
           <div class="services  w-full max-w-[358px] mx-auto flex flex-col justify-center items-center gap-3 md:gap-5">
             <h3 class="text-text-blue font-dm text-[22px] md:text-[25px] leading-loose">
-              {service.title}
+              {section.title}
             </h3>
             <p class="text-base md:text-[22px] tracking-tight font-jost text-text-gray leading-[33px] text-center">
-              {service.text}
+              {section.text}
             </p>
             <a
               href="/services"
               class="text-text-gray-200 leading-snug text-lg tracking-tight font-jost font-semibold gap-2 py-4 md:py-8 startCenter"
             >
-              Read More <ArrowSec />
+              {t('index.section.button')} <ArrowSec />
             </a>
           </div>
         )
@@ -90,7 +92,6 @@ const reviews = [
   </section>
 
   <!-- About Section -->
-
   <section
     class="w-full lg:max-w-[1200px] mx-auto px-12 xl:px-0 flex flex-col-reverse justify-center items-center lg:grid grid-cols-2 gap-[75px] pt-[100px] lg:pt-[200px]"
   >
@@ -114,52 +115,39 @@ const reviews = [
         </p>
       </div>
       <Button variant="primary" text="Get Free Estimate" />
-
-      <div>
-        <img src="/about-img.png" alt="" />
-      </div>
     </div>
-
-    <!-- What People Think About Us Section -->
-
-    <section class="lg:max-w-[1200px] px-12 xl:px-0 w-full mx-auto pt-[100px] lg:pt-[200px]">
-      <div class="w-full flex flex-col bg-primary-300 rounded-[48px] px-6 py-[88px]">
-        <h2
-          class="font-dm tracking-wide text-center leading-[37px] lg:leading-[62.50px] text-[30px] lg:text-[50px] w-full lg:max-w-[50%] pb-9 mx-auto"
-        >
-          What the People Thinks About Us
-        </h2>
-        <div class="flex flex-col gap-8 lg:gap-10 lg:flex-row justify-between">
-          {
-            reviews.map((rev) => {
-              return (
-                <div class="w-full bg-white max-w-[370px] px-[37px] py-[53px] rounded-3xl mx-auto flex flex-col justify-center gap-4 md:gap-6">
-                  <div class="flex flex-col sm:flex-row gap-6 items-center">
-                    <img src={rev.img} alt="" />
-                    <p class="flex flex-col tracking-tight leading-9">
-                      <span class="text-primary-200 text-lg lg:text-[25px] font-dm">
-                        {rev.name}
-                      </span>
-                      <span class="text-text-gray-200 text-base lg:text-lg font-jost">
-                        {rev.location}
-                      </span>
-                    </p>
-                  </div>
-                  <p class="font-jost tracking-tight leading-8 text-base text-center sm:text-left text-text-gray lg:text-[22px]">
-                    {rev.review}
-                  </p>
-                </div>
-              )
-            })
-          }
-        </div>
-      </div>
-    </section>
+    <img class="w-fit about-pool-img" src={poolImage.src} alt="Pool" />
   </section>
 
-  <style>
-    .hero {
-      width: 100%;
-    }
-  </style>
+  <!-- What People Think About Us Section -->
+  <section class="lg:max-w-[1200px] px-12 xl:px-0 w-full mx-auto pt-[100px] lg:pt-[200px]">
+    <div class="w-full flex flex-col bg-primary-300 rounded-[48px] px-6 py-[88px]">
+      <h2
+        class="font-dm tracking-wide text-center leading-[37px] lg:leading-[62.50px] text-[30px] lg:text-[50px] w-full lg:max-w-[50%] pb-9 mx-auto"
+      >
+        What the People Thinks About Us
+      </h2>
+      <div class="flex flex-col gap-8 lg:gap-10 lg:flex-row justify-between">
+        {
+          reviews.map((rev) => {
+            return (
+              <div class="w-full bg-white max-w-[370px] px-[37px] py-[53px] rounded-3xl mx-auto flex flex-col justify-center gap-4 md:gap-6">
+                <div class="flex flex-col sm:flex-row gap-6 items-center">
+                  <p class="flex flex-col tracking-tight leading-9">
+                    <span class="text-primary-200 text-lg lg:text-[25px] font-dm">{rev.name}</span>
+                    <span class="text-text-gray-200 text-base lg:text-lg font-jost">
+                      {rev.location}
+                    </span>
+                  </p>
+                </div>
+                <p class="font-jost tracking-tight leading-8 text-base text-center sm:text-left text-text-gray lg:text-[22px]">
+                  {rev.review}
+                </p>
+              </div>
+            )
+          })
+        }
+      </div>
+    </div>
+  </section>
 </Layout>

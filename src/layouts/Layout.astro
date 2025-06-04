@@ -27,7 +27,7 @@ const { lang } = Astro.props
     <main class="bg-main bg-no-repeat bg-cover bg-center">
       <Navbar client:load lang={lang} />
       <slot />
-      <Footer />
+      <Footer lang={lang} />
     </main>
   </body>
 </html>
