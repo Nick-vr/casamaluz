@@ -126,3 +126,6 @@
 .font-jost {
   font-family: 'Jost', sans-serif;
 }
+.rdp-vhidden {
+  @apply hidden;
+}

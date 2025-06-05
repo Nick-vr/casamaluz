@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import LanguagePicker from './languagePicker'
+import LanguagePicker from './LanguagePicker'
 import { motion } from 'framer-motion'
 import { useTranslations } from '../i18n/utils'
 import type { ui } from '@/i18n/ui.ts'

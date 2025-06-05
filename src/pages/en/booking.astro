@@ -2,7 +2,7 @@
 // ENGLISH
 import Layout from '@/layouts/Layout.astro'
 import DatePickerWithRange from '@/components/DatePickerWithRange'
-import BookingIsland from '@/components/booking-island'
+import BookingIsland from '@/components/Booking-island'
 ---
 
 <Layout lang="en">
@@ -20,7 +20,7 @@ import BookingIsland from '@/components/booking-island'
       </p>
     </div>
   </section>
-  <section class="w-full flex justify-center items-center py-50">
+  <section class="w-full flex justify-center items-start pt-30 min-h-[70vh]">
     <BookingIsland client:load />
   </section>
 </Layout>
