@@ -1,8 +1,25 @@
 ---
 // ENGLISH
 import Layout from '@/layouts/Layout.astro'
+import ContactForm from '@/components/form'
 ---
 
 <Layout lang="en">
-  <h1>Contact</h1>
+  <section class="w-full bg-contact-hero h-[50vh] flex justify-center items-end">
+    <div
+      class="py-[30px] lg:py-[41px] px-[60px] lg:px-[152px] flex flex-col justify-center items-center bg-white rounded-tl-[37px] rounded-tr-[37px] gap-2.5"
+    >
+      <h1
+        class="text-[30px] leading-[40px] lg:text-[50px] lg:leading-[62px] font-dm capitalize text-primary-200"
+      >
+        Contact
+      </h1>
+      <p class="text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray">
+        <a href="/">Home</a> / Contact
+      </p>
+    </div>
+  </section>
+  <section class="flex flex-col items-center pt-10 min-h-[50vh]">
+    <ContactForm client:load />
+  </section>
 </Layout>

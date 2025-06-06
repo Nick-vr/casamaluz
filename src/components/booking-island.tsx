@@ -1,5 +1,5 @@
 import * as React from 'react'
-import DatePickerWithRange from './DatePickerWithRange'
+import DatePickerWithRange from './datePickerWithRange'
 import { addDays, addYears, format, getYear, getMonth, setMonth, setYear } from 'date-fns'
 import type { DateRange } from 'react-day-picker'
 
