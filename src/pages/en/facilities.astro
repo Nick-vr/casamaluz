@@ -1,6 +1,8 @@
 ---
 // ENGLISH
 import Layout from '@/layouts/Layout.astro'
+
+import poolImage from '../../assets/pool.jpg'
 ---
 
 <Layout lang="en">
@@ -16,6 +18,84 @@ import Layout from '@/layouts/Layout.astro'
       <p class="text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray">
         <a href="/">Home</a> / Facilities
       </p>
+    </div>
+  </section>
+
+  <!-- Rooms -->
+
+  <section class="w-full pt-[100px] lg:pt-[150px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]">
+    <div class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 items-center">
+      <div class="flex flex-col gap-6">
+        <h2
+          class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+        >
+          Rooms
+        </h2>
+        <p
+          class="text-base md:text-[22px] lg:max-w-[85%] text-center lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+        >
+          It is a long established fact that a reader will be distracted by the of readable content
+          of a page when lookings at its layouts the points of using that it has a more-or-less
+          normal.
+        </p>
+      </div>
+      <img class="w-fit facilities-placeholder-img" src={poolImage.src} alt="Pool" />
+    </div>
+  </section>
+
+  <!-- Outside -->
+
+  <section class="w-full pt-[100px] lg:pt-[150px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]">
+    <div
+      class="w-full flex flex-col-reverse lg:flex-row-reverse justify-between gap-24 items-center"
+    >
+      <div class="flex flex-col gap-6">
+        <h2
+          class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+        >
+          Outside
+        </h2>
+        <p
+          class="text-base md:text-[22px] lg:max-w-[95%] text-center lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+        >
+          It is a long established fact that a reader will be distracted by the of readable content
+          of a page when lookings at its layouts the points of using that it has a more-or-less
+          normal.
+        </p>
+      </div>
+      <img class="w-fit facilities-placeholder-img" src={poolImage.src} alt="Pool" />
+    </div>
+  </section>
+
+  <!-- What People Think About Us Section -->
+
+  <section class="w-full py-[100px] lg:py-[185px] mt-[173px] px-12 lg:px-0 mx-auto bg-primary-300">
+    <div class="w-full flex flex-col gap-10 lg:max-w-[1200px] mx-auto">
+      <h2
+        class="font-dm tracking-wide text-center leading-[37px] lg:leading-[62.50px] text-[30px] lg:text-[50px] w-full lg:max-w-[50%] pb-9 mx-auto"
+      >
+        Other stuff here
+      </h2>
+      <div class="flex w-full overflow-x-scroll gap-4 flex-row no-scrollbar">
+        <div
+          class="flex flex-col gap-10 w-full justify-between py-[70px] px-7 bg-white min-w-[284px] items-center rounded-[32px]"
+        >
+          <p class="flex flex-col tracking-tight leading-9 text-center">
+            <span class="text-primary-200 text-lg lg:text-[25px] font-dm">Nattasha Julie</span>
+            <span class="text-text-gray-200 text-base lg:text-lg font-jost">
+              Design, Australia</span
+            >
+          </p>
+
+          <p class="flex flex-col tracking-tight leading-9 text-center">
+            <span class="text-text-gray-200 text-base lg:text-lg font-jost">
+              +1 (378) 400-1234</span
+            >
+            <span class="text-text-gray-200 text-base lg:text-lg font-jost"> julie@email.com</span>
+          </p>
+        </div>
+        <img src="/person3.png" alt="" />
+      </div>
     </div>
   </section>
 </Layout>

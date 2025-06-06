@@ -36,7 +36,6 @@ export default function DatePickerWithRange({
     <div className={cn('grid gap-2 justify-center', className)}>
       <Calendar
         className="rounded-md border shadow-sm"
-        initialFocus
         mode="range"
         defaultMonth={fromInput}
         selected={date}

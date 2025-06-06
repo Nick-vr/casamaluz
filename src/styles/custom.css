@@ -48,6 +48,12 @@
   border-top-right-radius: 200px;
   border-bottom-left-radius: 200px;
 }
+.facilities-placeholder-img {
+  height: 400px;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+}
 .booking-aside-img {
   height: 500px;
   border-radius: 100px;
